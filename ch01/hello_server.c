@@ -37,7 +37,8 @@ int main(int argc, char* argv[])
 
 
   clnt_addr_size = sizeof(clnt_addr);
-  slnt_sock = accept()
+  clnt_sock = accept(serv_sock, (struct sockaddr*)&clnt_addr, &clnt_addr_size);
+  if(clnt_sock == -1) error_handling("accept() error");
 }
 
 void error_handling(void *msg)
