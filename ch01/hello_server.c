@@ -20,7 +20,7 @@ int main(int argc, char* argv[])
 
   if(argc != 2)
   {
-    print("Usage : %s <port>\n", argv[0]);
+    printf("Usage : %s <port>\n", argv[0]);
     exit(1);
   }
 
@@ -48,7 +48,7 @@ int main(int argc, char* argv[])
 
 void error_handling(void *msg)
 {
-  fputs((char)msg, stderr);
+  fputs((char*)msg, stderr);
   putc('\n', stderr);
   exit(1);
 }
